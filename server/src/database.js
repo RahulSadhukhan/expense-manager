@@ -11,7 +11,6 @@ export default class database {
                 useNewUrlParser: true,
                 autoIndex: false,
                 useFindAndModify: false,
-                reconnectTries: Number.MAX_VALUE,
                 useUnifiedTopology: true 
             });
         } catch (error) {
