@@ -1,0 +1,12 @@
+{
+    "name": "expense-manager",
+    "version": "1.0.0",
+    "description": "",
+    "main": "src/index.js",
+    "scripts": {
+      "start": "cd ./server && npm run start"
+    },
+    "author": "Rahul",
+    "license": "ISC"
+  }
+  
