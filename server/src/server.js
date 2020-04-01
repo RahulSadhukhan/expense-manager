@@ -45,6 +45,6 @@ export default class Server {
     }
 
     listen() {
-        this.app.listen(this.config.port, () => console.log(`App is running at server ${this.config.port}!`));
+        this.app.listen(this.config.port, () => console.log(`App is running at port ${this.config.port}!`));
     }
 }
