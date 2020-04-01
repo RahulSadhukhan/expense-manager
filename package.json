@@ -2,18 +2,12 @@
     "name": "expense-manager",
     "version": "1.0.0",
     "description": "Application for managing your expenses",
-    "main": "server/index.js",
+    "main": "server/src/index.js",
     "scripts": {
-      "start": "nodemon --exec babel-node server/src/index.js",
-      "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client && npm install --prefix server"
+      "start": "cd ./server && npm run start",
+      "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client && NPM_CONFIG_PRODUCTION=false npm install --prefix server"
     },
     "author": "Rahul",
-    "license": "ISC",
-    "devDependencies": {
-      "@babel/core": "^7.6.2",
-      "@babel/node": "^7.6.2",
-      "@babel/preset-env": "^7.6.2",
-      "nodemon": "^1.19.3"
-    }
+    "license": "ISC"
   }
   
