@@ -18,6 +18,11 @@ const Routes = (props) => {
         path={`${path}/expenses/create`}
         component={ExpenseForm}
       />
+      <Route
+        exact
+        path={`${path}/expenses/edit/:id`}
+        component={() => <ExpenseForm edit/>}
+      />
       <Redirect to={`${path}/sign-in`} />
     </Switch>
   );

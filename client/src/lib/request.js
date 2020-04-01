@@ -6,7 +6,6 @@ class Request {
     }
 
     post(url, data, options) {
-        console.log('--------->', data);
         return axios.post(url, data, options);
     }
 
