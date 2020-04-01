@@ -2,9 +2,10 @@
     "name": "expense-manager",
     "version": "1.0.0",
     "description": "",
-    "main": "src/index.js",
+    "main": "server/index.js",
     "scripts": {
-      "start": "cd ./server && npm run start"
+      "start": "cd ./server && npm run start",
+      "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client && npm install --prefix server"
     },
     "author": "Rahul",
     "license": "ISC"

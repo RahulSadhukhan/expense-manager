@@ -1,6 +1,7 @@
 import express from 'express';
 import bodyParser from 'body-parser';
 import cors from 'cors';
+import path from 'path';
 
 import Database from './database';
 import { routes as userRoutes } from './controllers/user';
@@ -36,9 +37,11 @@ export default class Server {
  
         // parse application/json
         this.app.use(bodyParser.json());
-        this.app.get('/health-check', (req, res) => (res.send('I am ok')));
+        this.app.use(express.static(path.join(__dirname, '../../client/build')));
         this.app.use('/user', userRoutes);
         this.app.use('/expense', expenseRoutes);
+        this.app.get('/health-check', (req, res) => (res.send('I am ok')));
+        this.app.get('*', (req, res) => {  res.sendFile(path.join(__dirname, '../../client/build/index.html'))})
     }
 
     listen() {
